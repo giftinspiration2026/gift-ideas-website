@@ -1,0 +1,762 @@
+
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gift Ideas and Inspiration</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: #FFF8F2;
+    color: #3B174A;
+}
+
+/* Header */
+header {
+    background: #3B174A;
+    color: white;
+    padding: 22px 15px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 27px;
+    letter-spacing: 1px;
+}
+
+header p {
+    color: #E8C6D5;
+    margin-top: 7px;
+}
+
+/* Navigation */
+nav {
+    background: #51265D;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 15px 5px;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: #D9A441;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 390px;
+    padding: 65px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #F7DCE7, #FFF0E5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero h2 {
+    font-size: 34px;
+    color: #3B174A;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.btn {
+    background: #E85D8E;
+    color: white;
+    padding: 13px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.btn:hover {
+    background: #3B174A;
+}
+
+/* Section */
+.section {
+    padding: 45px 18px;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 27px;
+    margin-bottom: 12px;
+    color: #3B174A;
+}
+
+.subtitle {
+    color: #866D83;
+    margin-bottom: 28px;
+}
+
+/* Categories */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.card {
+    background: white;
+    padding: 25px 10px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(59,23,74,0.10);
+    border-bottom: 3px solid #D9A441;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card .emoji {
+    font-size: 38px;
+}
+
+.card h3 {
+    color: #51265D;
+    margin-top: 12px;
+    font-size: 16px;
+}
+
+/* Inspiration */
+.inspiration {
+    background: #3B174A;
+    color: white;
+    padding: 45px 20px;
+    text-align: center;
+}
+
+.inspiration h2 {
+    color: #F4C5D7;
+    font-size: 27px;
+    margin-bottom: 15px;
+}
+
+.inspiration p {
+    line-height: 1.8;
+    margin-bottom: 22px;
+}
+
+/* About */
+.about {
+    padding: 45px 22px;
+    text-align: center;
+    line-height: 1.8;
+}
+
+/* Footer */
+footer {
+    background: #3B174A;
+    color: white;
+    padding: 25px 15px;
+    text-align: center;
+    line-height: 1.8;
+}
+
+footer span {
+    color: #D9A441;
+}
+
+/* Mobile */
+@media(max-width: 350px) {
+    .hero h2 {
+        font-size: 27px;
+    }
+
+    nav {
+        gap: 12px;
+    }
+}
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.card {
+    width: 100%;
+    box-sizing: border-box;
+}
+  .grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 15px;
+}
+
+.grid .card {
+    width: 100%;
+    box-sizing: border-box;
+}
+  #databaseGiftsSection {
+    display: none !important;
+  }
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>🎁 Gift Ideas & Inspiration</h1>
+    <p>Make Every Moment Special ❤️</p>
+</header>
+<div style="text-align:center; padding:15px;">
+    <button onclick="addGiftToDatabase()" style="background:#e91e63; color:white; padding:12px 20px; border:none; border-radius:25px;">
+        + Add New Gift
+    </button>
+</div>
+<nav>
+    <a href="#home">Home</a>
+    <a href="#categories">Categories</a>
+    <a href="#inspiration">Inspiration</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section class="hero" id="home">
+    <h2>Find The Perfect Gift!</h2>
+
+    <p>
+        Every gift tells a story.
+        Make your special moments unforgettable
+        with thoughtful gifts.
+    </p>
+
+    <a href="#categories" class="btn">
+        Explore Gift Ideas
+    </a>
+</section>
+
+<section class="section" id="categories">
+
+    <h2>Explore Categories</h2>
+
+    <p class="subtitle">
+        Discover beautiful gifts for every occasion.
+    </p>
+  <div class="card">
+            <div class="emoji">🎂</div>
+            <h3>Birthday Gifts</h3>
+  </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1513201099705-a9746e1e201f?w=500"
+    alt="Birthday Gift Box"
+    style="width:100%; height:180px; object-fit:cover; border-radius:10px;">
+
+    <h3>Birthday Gift Box</h3>
+    <p>Price: ₹499</p>
+    <button class="btn" onclick="addToCart('Birthday Gift Box', 499)">Add to Cart</button>
+  </div>
+
+<div class="card">
+  <img src="https://api.floraindia.com/upload/9dHcSlf1I91752214769329.webp"
+  alt="Chocolate Gift Basket"
+  style="width:100%; height:180px; object-fit:cover; border-radius:10px;">
+  <h3>Birthday Chocolate Hamper</h3>
+  <p>Price: ₹399</p>
+  <button class="btn" onclick="addToCart('Birthday Chocolate Hamper', 399)">Add to Cart</button>
+</div>
+
+<div class="card">
+    <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=600"
+    alt="Birthday Surprise Box"
+    style="width:100%; height:180px; object-fit:cover; border-radius:10px;">
+    <h3>Birthday Surprise Box</h3>
+    <p>Price: ₹599</p>
+    <button class="btn" onclick="addToCart('Birthday Surprise Box', 599)">Add to Cart</button>
+</div>
+      <div class="card">
+    <div class="emoji">💍</div>
+    <h3>Anniversary Gifts</h3>
+      </div>
+
+          <div class="card">
+            <img src="https://bloomsandbeyond.shop/assets/home-studio-hamper.png"
+alt="Anniversary Gift Hamper"
+style="width:100%; height:180px; object-fit:cover; border-radius:10px;">
+    <h3>Anniversary Gift Hamper</h3>
+    <p>Price: ₹699</p>
+    <button class="btn" onclick="addToCart('Anniversary Gift Hamper', 699)">Add to Cart</button>
+</div>
+
+<div class="card">
+  <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=500"
+alt="Personalized Photo Frame"
+style="width:100%; height:180px; object-fit:cover; border-radius:10px;">
+    <h3>Personalized photo frame</h3>
+    <p>Price: ₹599</p>
+    <button class="btn" onclick="addToCart('Personalized photo frame', 599)">Add to Cart</button>
+</div>
+
+<div class="card">
+  <img src="https://omeoflowers.com.au/cdn/shop/files/34_800x.png?v=1720764761"
+alt="Pastel Flower Bouquet"
+style="width:100%; height:180px; object-fit:cover; border-radius:10px;">
+</div>
+    <h3>Anniversary Flower Bouquet</h3>
+    <p>Price: ₹499</p>
+    <button class="btn" onclick="addToCart('Anniversary Flower Bouquet', 499)">Add to Cart</button>
+</>
+      
+        <div class="card">
+            <div class="emoji">💒</div>
+            <h3>Wedding Gifts</h3>
+        </div>
+ <div class="card">
+   <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=500"
+alt="Wedding Gift Hamper"
+style="width:100%; height:180px; object-fit:cover; border-radius:10px;">
+    <h3>Wedding Gift Hamper</h3>
+    <p>Price: ₹999</p>
+    <button class="btn" onclick="addToCart('Wedding Gift Hamper', 999)">Add to Cart</button>
+</div>
+
+<div class="card">
+  <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=500"
+alt="Wedding Photo Frame"
+style="width:100%; height:180px; object-fit:cover; border-radius:10px;">
+    <h3>Wedding Photo Frame</h3>
+    <p>Price: ₹699</p>
+    <button class="btn" onclick="addToCart('Wedding Photo Frame', 699)">Add to Cart</button>
+</div>
+
+<div class="card">
+  <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=500"
+alt="Wedding Decoration Set"
+style="width:100%; height:180px; object-fit:cover; border-radius:10px;">
+    <h3>Wedding Decoration Set</h3>
+    <p>Price: ₹799</p>
+    <button class="btn" onclick="addToCart('Wedding Decoration Set', 799)">Add to Cart</button>
+</div> 
+
+        <div class="card">
+            <div class="emoji">💝</div>
+            <h3>Friendship Gifts</h3>
+        </div>
+<div class="card">
+  <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=500"
+alt="Best Friend Gift Hamper"
+style="width:100%; height:180px; object-fit:cover; border-radius:10px;">
+    <h3>Best Friend Gift Hamper</h3>
+    <p>Price: ₹499</p>
+    <button class="btn" onclick="addToCart('Best Friend Gift Hamper', 499)">Add to Cart</button>
+</div>
+
+<div class="card">
+  <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=500"
+alt="Friendship Photo Frame"
+style="width:100%; height:180px; object-fit:cover; border-radius:10px;">
+    <h3>Friendship Photo Frame</h3>
+    <p>Price: ₹399</p>
+    <button class="btn" onclick="addToCart('Friendship Photo Frame', 399)">Add to Cart</button>
+</div>
+
+<div class="card">
+  <img src="https://accessorizelondon.in/cdn/shop/products/MA-68356199001_1.jpg?v=1709899949"
+alt="Friendship Bracelet Set"
+style="width:100%; height:180px; object-fit:cover; border-radius:10px;">
+    <h3>Friendship Bracelet Set</h3>
+    <p>Price: ₹299</p>
+    <button class="btn" onclick="addToCart('Friendship Bracelet Set', 299)">Add to Cart</button>
+</div>
+        <div class="card">
+            <div class="emoji">🎓</div>
+            <h3>Graduation Gifts</h3>
+        </div>
+<div class="card">
+  <img src="https://images.pexels.com/photos/7842498/pexels-photo-7842498.jpeg"
+alt="Graduation Gift Hamper"
+style="width:100%; height:180px; object-fit:cover; border-radius:10px;">
+    <h3>Graduation Gift Hamper</h3>
+    <p>Price: ₹699</p>
+    <button class="btn" onclick="addToCart('Graduation Gift Hamper', 699)">Add to Cart</button>
+</div>
+
+<div class="card">
+  <img src="https://i.etsystatic.com/65339205/r/il/c5ac73/8066053305/il_794xN.8066053305_niz9.jpg"
+alt="Graduation Photo Frame"
+style="width:100%; height:180px; object-fit:cover; border-radius:10px;">
+    <h3>Graduation Photo Frame</h3>
+    <p>Price: ₹499</p>
+    <button class="btn" onclick="addToCart('Graduation Photo Frame', 499)">Add to Cart</button>
+</div>
+
+<div class="card">
+  <img src="https://www.giftedge.in/assets/home/c3-rewards.png"
+alt="Success Gift Set"
+style="width:100%; height:180px; object-fit:cover; border-radius:10px;">
+    <h3>Success Gift Set</h3>
+    <p>Price: ₹599</p>
+    <button class="btn" onclick="addToCart('Success Gift Set', 599)">Add to Cart</button>
+</div>
+        <div class="card">
+            <div class="emoji">🎀</div>
+            <h3>Surprise Gifts</h3>
+        </div>
+<div class="card">
+  <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=500"
+alt="Surprise Gift Box"
+style="width:100%; height:180px; object-fit:cover; border-radius:10px;">
+    <h3>Surprise Gift Box</h3>
+    <p>Price: ₹499</p>
+    <button class="btn" onclick="addToCart('Surprise Gift Box', 499)">Add to Cart</button>
+</div>
+
+<div class="card">
+  <img src="https://capitalbrand.net/images/cb-regalos.png"
+alt="Midnight Surprise Hamper"
+style="width:100%; height:180px; object-fit:cover; border-radius:10px;">
+    <h3>Midnight Surprise Hamper</h3>
+    <p>Price: ₹799</p>
+    <button class="btn" onclick="addToCart('Midnight Surprise Hamper', 799)">Add to Cart</button>
+</div>
+
+<div class="card">
+  <img src="https://i.etsystatic.com/50830958/r/il/ae0e7c/7878406194/il_1588xN.7878406194_m2wr.jpg"
+alt="Personalized Surprise Set"
+style="width:100%; height:180px; object-fit:cover; border-radius:10px;">
+    <h3>Personalized Surprise Set</h3>
+    <p>Price: ₹599</p>
+    <button class="btn" onclick="addToCart('Personalized Surprise Set', 599)">Add to Cart</button>
+</div>
+    </div>
+</section>
+
+<section class="inspiration" id="inspiration">
+
+    <h2>Get Inspired!</h2>
+
+    <p>
+        Not sure what to gift?
+        Explore creative ideas and make
+        your loved ones feel special.
+    </p>
+
+    <a href="#categories" class="btn">
+        Discover Ideas
+    </a>
+
+</section>
+
+<section class="about" id="about">
+
+    <h2>About Us</h2>
+
+    <p>
+        Gift Ideas and Inspiration is a platform
+        designed to help people discover thoughtful,
+        creative and meaningful gifts for their
+        friends and family on every special occasion.
+    </p>
+
+</section>
+
+<section class="section" id="contact">
+
+    <h2>Contact Us</h2>
+
+    <p class="subtitle">
+        Have questions? We would love to hear from you!
+    </p>
+<div class="card">
+    <h3>Get in Touch</h3>
+
+    <input type="text" placeholder="Enter Your Name">
+
+    <input type="email" placeholder="Enter Your Email">
+
+    <textarea placeholder="Write Your Message" rows="4"></textarea>
+
+    <button class="btn" type="button"
+    onclick="alert('Contact form demo is ready!')">
+    Send Message
+    </button>
+</div>
+</section>
+
+<section class="section" id="products">
+
+    <h2>Our Popular Gifts</h2>
+
+    <p class="subtitle">
+        Choose something special for your loved ones.
+    </p>
+
+    <div class="grid">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=400"
+            style="width:100%;height:150px;object-fit:cover;border-radius:10px;">
+            <h3>Luxury Gift Box</h3>
+            <p>₹499</p>
+            <button class="btn" onclick="addToCart('Luxury Gift Box', 499)">Add to Cart</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1559563458-527698bf5295?w=400"
+            style="width:100%;height:150px;object-fit:cover;border-radius:10px;">
+            <h3>Beautiful Gift Set</h3>
+            <p>₹599</p>
+            <button class="btn" onclick="addToCart('Beautiful Gift Set', 599)">Add to Cart</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=400"
+            style="width:100%;height:150px;object-fit:cover;border-radius:10px;">
+            <h3>Flower Bouquet</h3>
+            <p>₹399</p>
+          <button class="btn" onclick="addToCart('Flower Bouquet', 399)">Add to Cart</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=400"
+            style="width:100%;height:150px;object-fit:cover;border-radius:10px;">
+            <h3>Creative Gift</h3>
+            <p>₹299</p>
+            <button class="btn" onclick="addToCart('Creative Gift', 299)">Add to Cart</button>
+        </div>
+
+    </div>
+</section>
+
+  <section class="section" id="login">
+    <h2>👤 Login & Sign Up</h2>
+    <p class="subtitle">Join us and make every celebration special!</p>
+
+    <div class="card">
+        <h3>Create New Account</h3>
+
+        <input type="text" id="signup-name" placeholder="Enter Your Name">
+
+        <input type="email" id="signup-email" placeholder="Enter Your Email">
+
+        <input type="password" id="signup-password" placeholder="Create Password">
+
+        <button class="btn" onclick="signup()">Sign Up</button>
+    </div>
+
+    <div class="card">
+        <h3>User Login</h3>
+
+        <input type="email" id="login-email" placeholder="Enter Your Email">
+
+        <input type="password" id="login-password" placeholder="Enter Your Password">
+
+        <button class="btn" style="display:block; margin:12px auto;" onclick="login()">Login</button>
+    </div>
+
+    <p id="login-message"></p>
+  </section>
+<section class="section" i
+    <p class="subtitle">
+        Your selected gifts will appear here.
+    </p>
+
+    <div id="cart-items">
+        <p>Your cart is empty!</p>
+    </div>
+<button class="btn" onclick="clearCart()">Clear Cart</button>
+    <h3 id="cart-total">Total: ₹0</h3>
+
+</section>
+<script>
+let cart = [];
+let total = 0;
+
+function addToCart(name, price) {
+    cart.push({name: name, price: price});
+    showCart();
+}
+
+function showCart() {
+    let cartItems = document.getElementById("cart-items");
+    let cartTotal = document.getElementById("cart-total");
+
+    cartItems.innerHTML = "";
+    total = 0;
+
+    cart.forEach(function(item, index) {
+        total += item.price;
+        cartItems.innerHTML += `
+            <p>${item.name} - ₹${item.price}
+            <button onclick="removeFromCart(${index})">Remove</button></p>
+        `;
+    });
+
+    if (cart.length === 0) {
+        cartItems.innerHTML = "<p>Your cart is empty!</p>";
+    }
+
+    cartTotal.innerText = "Total: ₹" + total;
+}
+
+function removeFromCart(index) {
+    cart.splice(index, 1);
+    showCart();
+}
+  function clearCart() {
+    cart = [];
+    showCart();
+  }
+   
+function signup() {
+    let name = document.getElementById("signup-name").value;
+    let email = document.getElementById("signup-email").value;
+    let password = document.getElementById("signup-password").value;
+
+    let message = document.getElementById("login-message");
+
+    if (name === "" || email === "" || password === "") {
+        message.innerText = "Please fill all signup fields!";
+    } else {
+        message.innerText = "Signup form completed! Backend connection pending.";
+    }
+}
+
+function login() {
+    let email = document.getElementById("login-email").value;
+    let password = document.getElementById("login-password").value;
+
+    let message = document.getElementById("login-message");
+
+    if (email === "" || password === "") {
+        message.innerText = "Please enter email and password!";
+    } else {
+        message.innerText = "Login form completed! Backend connection pending.";
+    }
+  }
+</script>
+<footer>
+    <h3>🎁 Gift Ideas & Inspiration</h3>
+    <p>Making Every Celebration Special</p>
+    <p>© 2026 All Rights Reserved</p>
+    <span>Made with Love ❤️</span>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+const SUPABASE_URL = "https://bxlwuqoelxboesoyldcz.supabase.co";
+const SUPABASE_KEY = "sb_publishable_FFfD8n0lXZTpnWvsuTfr5Q_46tYpCur";
+  
+const db = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+async function loadGifts() {
+    const { data, error } = await db
+        .from("gifts")
+        .select("*")
+.not("category", "ilike", "test");
+
+    if (error) {
+        alert("Database Error: " + error.message);
+        return;
+    }
+
+    
+const oldSection = document.getElementById("databaseGiftsSection");
+if (oldSection) oldSection.remove();
+  const filteredGifts = data.filter(gift =>
+    gift.category?.toLowerCase() !== "test"
+);
+
+if (filteredGifts.length === 0) {
+    return;
+}
+  if (!data || data.length === 0) {
+    return;
+  }
+    const section = document.createElement("section");
+  section.id = "databaseGiftsSection";
+  section.style.display = "grid";
+section.style.gridTemplateColumns = "repeat(2, 1fr)";
+section.style.gap = "15px";
+section.style.padding = "15px";
+    section.innerHTML = "<h2>Gifts From Database</h2>";
+section.style.background = "#ffffff";
+section.style.borderRadius = "15px";
+section.style.boxShadow = "0 4px 12px #ddd";
+    filteredGifts.forEach(gift => {
+        section.innerHTML += `
+            <div style="background:#fff7f2; border-radius:15px; padding:12px; box-shadow:0 4px 10px #ddd;">
+            <p style="font-size:22px;">🎁</p>
+                <h3>${gift.name}</h3>
+                ${gift.image_url ? `<img src="${gift.image_url}" width="150">` : ""}
+                <p style="color:#e91e63; font-weight:bold;">Price: ₹${gift.price}</p>
+                <p style="color:#777; font-size:13px;">Category: ${gift.category}</p>
+                <button onclick="addToCart('${gift.name}', ${gift.price})">Add to Cart</button>
+                <button onclick="deleteGift(${gift.id})">Delete</button>
+            </div>
+        `;
+    });
+
+    document.body.appendChild(section);
+}
+  async function deleteGift(id) {
+    const confirmDelete = confirm("Are you sure you want to delete this gift?");
+
+    if (!confirmDelete) return;
+
+    const { error } = await db
+        .from("gifts")
+        .delete()
+        .eq("id", id);
+
+    if (error) {
+        alert("Error deleting gift: " + error.message);
+    } else {
+        alert("Gift deleted successfully!");
+        loadGifts();
+    }
+  }
+async function addGiftToDatabase() {
+    const name = prompt("Gift name:");
+    const price = prompt("Gift price:");
+    const category = prompt("Gift category:");
+
+    if (!name || !price || !category) return;
+
+    const { error } = await db.from("gifts").insert([
+        {
+            name: name,
+            price: Number(price),
+            category: category
+        }
+    ]);
+
+    if (error) {
+        alert("Error: " + error.message);
+    } else {
+        alert("Gift Added Successfully!");
+        loadGifts();
+    }
+          }
+loadGifts();
+</script>
+</body>
+</html>
